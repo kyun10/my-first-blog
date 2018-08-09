@@ -7,16 +7,14 @@
       <h1><a href="">Kyun's Blog</a></h1>
     </div>
 
-    <div>
-      <p>published: 09.08.2018, 10:12</p>
-      <h2><a href="">My first post</a></h2>
-      <p>집에 보내줘</p>
-    </div>
 
-    <div>
-      <p>published: 09.08.2018, 10:12</p>
-      <h2><a href="https://youtu.be/EzQsoZYY470">My Second post</a></h2>
-      <p>집가고 싶어</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
   </body>
 </html>
